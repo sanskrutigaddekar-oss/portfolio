@@ -1,0 +1,1266 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* CSS Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #0f172a;        /* Deep modern dark background */
+    --card-bg: #1e293b;         /* Slightly lighter container color */
+    --accent-color: #00f2fe;    /* Electric cyan accent */
+    --accent-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    --text-primary: #f8fafc;    /* Crisp light text */
+    --text-secondary: #94a3b8;  /* Muted secondary text */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header & Navbar Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+/* Resume Button Styling */
+.resume-btn {
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-left:1rem;
+}
+
+.resume-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+/* Home / Hero Section */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-content {
+    max-width: 800px;
+}
+
+.hello {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+
+.home-content h2 {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.home-content p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+/* Responsive Design for Tablets & Mobile */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Tip: You can add JS toggle menu for mobile hamburger later */
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* about section*/
+/* About Section Styles */
+.about-section {
+    padding-top: 140px;
+    padding-bottom: 5rem ;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-gradient);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.about-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.about-text strong {
+    color: var(--accent-color);
+}
+
+/* Feature Cards Grid */
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.about-cards .card {
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.about-cards .card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.card-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    background: rgba(0, 242, 254, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+}
+
+.about-cards .card h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+}
+
+.about-cards .card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Education Section */
+.education-section {
+   padding-top: 140px;
+    padding-bottom: 5rem ;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Timeline Layout */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    border-left: 2px solid rgba(0, 242, 254, 0.3);
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.55rem;
+    top: 0.3rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-color, #00f2fe);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+.timeline-content {
+    background: var(--card-bg, #1e293b);
+    padding: 1.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color, #00f2fe);
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent-color, #00f2fe);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary, #f8fafc);
+    margin-bottom: 0.2rem;
+}
+
+.timeline-content h4 {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #94a3b8);
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #94a3b8);
+    line-height: 1.6;
+}
+
+.timeline-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--accent-color, #00f2fe);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* project Section Layout */
+.project-section {
+    padding-top: 140px; /* Space to clear fixed header */
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-cards .card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-cards .card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1);
+}
+
+.project-cards h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.project-cards h4 {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.project-cards h4 span {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.project-cards p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+/* Scope styles strictly to the Projects page using body.projects-page or main container */
+body.projects-page {
+    background-color: #0b1120;
+    color: #ffffff;
+}
+
+/* Timeline Container Setup */
+body.projects-page main {
+    position: relative;
+    padding-left: 45px;
+    padding-top: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Page Section Title & Accent Line */
+body.projects-page main section h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+body.projects-page main section h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #0088ff;
+    border-radius: 2px;
+    margin-top: 5px;
+    box-shadow: 0 0 8px #0088ff;
+}
+
+/* Vertical Timeline Line */
+body.projects-page main::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    bottom: 25px;
+    left: 15px;
+    width: 2px;
+    background: linear-gradient(180deg, #00d2ff 0%, rgba(0, 210, 255, 0.2) 100%);
+}
+
+/* Project Cards */
+body.projects-page article {
+    position: relative;
+    background: rgba(18, 28, 48, 0.6);
+    border: 1px solid rgba(0, 136, 255, 0.15);
+    border-radius: 12px;
+    padding: 22px 28px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+body.projects-page article:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 210, 255, 0.4);
+}
+
+/* Glowing Blue Bullet / Node on Timeline */
+body.projects-page article::before {
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 28px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #00d2ff;
+    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff;
+    z-index: 1;
+}
+
+/* Headings and Paragraphs inside Cards */
+body.projects-page article h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+body.projects-page article p {
+    color: #cbd5e0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Section Layout */
+.experience-section {
+    padding-top: 140px;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Section Title */
+.experience-section .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.experience-section .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #0088ff;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 8px #0088ff;
+}
+
+/* Timeline Vertical Container */
+.experience-cards {
+    position: relative;
+    padding-left: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Timeline Connecting Vertical Line */
+.experience-cards::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 6px;
+    width: 2px;
+    background: #0088ff;
+    box-shadow: 0 0 6px rgba(0, 136, 255, 0.6);
+}
+
+/* Individual Experience Card */
+.experience-cards .cards {
+    position: relative;
+    background: rgba(18, 28, 48, 0.6);
+    border: 1px solid rgba(0, 136, 255, 0.15);
+    border-radius: 12px;
+    padding: 22px 28px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-cards .cards:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 210, 255, 0.15);
+}
+
+/* Glowing Timeline Dot */
+.experience-cards .cards::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 26px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #00d2ff;
+    box-shadow: 0 0 10px #00d2ff, 0 0 18px #00d2ff;
+    z-index: 2;
+}
+
+/* Card Category Tag / Badge */
+.card-tag {
+    display: inline-block;
+    background-color: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+/* Headings & Subheadings */
+.experience-cards h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.experience-cards h4 {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #94a3b8);
+    font-weight: 400;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.experience-cards h4 span {
+    color: var(--accent-color, #00d2ff);
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+/* Paragraph Text */
+.experience-cards p {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #cbd5e0);
+    line-height: 1.6;
+}
+
+/* skills css */
+/* ==========================================
+   GLOBAL SKILLS PAGE LAYOUT
+   ========================================== */
+
+/* Page Background & Text Base */
+body.skills-page {
+    background-color: #0b1120;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Container Spacing & Clearance for Fixed Header */
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 140px 20px 60px; /* 140px clears top navbar */
+}
+
+/* ==========================================
+   PAGE TITLE & BLUE ACCENT BAR
+   ========================================== */
+
+.skills-container .page-title h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+/* Blue Accent Underline under Heading */
+.skills-container .page-title .underline {
+    width: 50px;
+    height: 4px;
+    background-color: #0088ff;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #0088ff;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   SKILLS GRID SYSTEM
+   ========================================== */
+
+/* 2x2 Grid Layout for Skill Categories */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+/* ==========================================
+   SKILL CARDS DESIGN
+   ========================================== */
+
+.skill-card {
+    background: rgba(18, 28, 48, 0.6);
+    border: 1px solid rgba(0, 136, 255, 0.15);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Cards */
+.skill-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 210, 255, 0.12);
+}
+
+/* Category Badge (Top of Card) */
+.skill-card .card-tag {
+    display: inline-block;
+    background-color: rgba(0, 210, 255, 0.12);
+    color: #00d2ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0, 210, 255, 0.25);
+}
+
+/* Card Headings */
+.skill-card h2 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+}
+
+/* ==========================================
+   SKILL BADGES (TAGS)
+   ========================================== */
+
+/* Flexbox Layout for Skill Pills */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Individual Skill Pill Style */
+.skill-badge {
+    background: rgba(255, 255, 255, 0.04);
+    color: #cbd5e0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect for Individual Pills */
+.skill-badge:hover {
+    background: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.25);
+}
+
+/* ==========================================
+   GLOBAL CERTIFICATIONS PAGE STYLES
+   ========================================== */
+
+/* Page Background & Layout Base */
+body.certifications-page {
+    background-color: #0b1120;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Container Spacing & Clearance for Fixed Header */
+.certifications-container {
+    padding-top: 140px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 20px 60px; /* 120px clears top navbar */
+}
+
+
+/* ==========================================
+   PAGE TITLE & ACCENT UNDERLINE
+   ========================================== */
+
+.certifications-container .page-title h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+/* Glowing Blue Underline Accent */
+.certifications-container .page-title .underline {
+    width: 50px;
+    height: 4px;
+    background-color: #0088ff;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #0088ff;
+    margin-bottom: 40px;
+}
+
+/* ==========================================
+   VERTICAL TIMELINE STRUCTURE
+   ========================================== */
+
+/* Outer Timeline Container */
+.certifications-timeline {
+    position: relative;
+    padding-left: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Vertical Connecting Line running down the left */
+.certifications-timeline::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 6px;
+    width: 2px;
+    background: #0088ff;
+    box-shadow: 0 0 6px rgba(0, 136, 255, 0.6);
+}
+
+/* ==========================================
+   CERTIFICATION CARDS
+   ========================================== */
+
+.cert-card {
+    position: relative;
+    background: rgba(18, 28, 48, 0.6);
+    border: 1px solid rgba(0, 136, 255, 0.15);
+    border-radius: 12px;
+    padding: 22px 28px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Glow & Rise Effect */
+.cert-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 210, 255, 0.15);
+}
+
+/* Glowing Timeline Dot on the Vertical Line */
+.cert-card::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 26px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #00d2ff;
+    box-shadow: 0 0 10px #00d2ff, 0 0 18px #00d2ff;
+    z-index: 2;
+}
+
+/* ==========================================
+   CARD INTERNAL CONTENT
+   ========================================== */
+
+/* Category Badge (Top Tag) */
+.cert-card .card-tag {
+    display: inline-block;
+    background-color: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+/* Certification Title */
+.cert-card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+/* Issuer & Date Row */
+.cert-card h3 {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 400;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Date / Year Accent Text */
+.cert-card h3 span {
+    color: #00d2ff;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+/* Card Description Text */
+.cert-card p {
+    font-size: 0.95rem;
+    color: #cbd5e0;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+/* ==========================================
+   SKILL PILLS INSIDE CERTIFICATE CARDS
+   ========================================== */
+
+.cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.cert-skills span {
+    background: rgba(255, 255, 255, 0.04);
+    color: #00d2ff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+/* ==========================================
+   LINKEDIN VERIFICATION BANNER
+   ========================================== */
+
+/* Container for LinkedIn link at page bottom */
+.linkedin-reference-box {
+    margin-top: 45px;
+    padding: 24px;
+    background: rgba(18, 28, 48, 0.7);
+    border: 1px solid rgba(0, 136, 255, 0.25);
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.linkedin-reference-box p {
+    color: #cbd5e0;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+/* Glowing Blue LinkedIn Button */
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0077b5;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 119, 181, 0.4);
+}
+
+.linkedin-btn:hover {
+    background-color: #0088cc;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 136, 255, 0.6);
+}
+
+/* Header & Navbar Alignment */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(11, 17, 32, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Two-Line Logo Styling (Sanskruti / Gaddekar) */
+header .logo {
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00d2ff;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+/* Navigation Links Row */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+header nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #ffffff;
+}
+
+/* Resume Pill Button Style */
+header nav a.resume-btn,
+header nav a[href*="resume"] {
+    border: 2px solid #00d2ff;
+    color: #00d2ff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+header nav a.resume-btn:hover,
+header nav a[href*="resume"]:hover {
+    background-color: #00d2ff;
+    color: #0b1120;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+}
+
+
+/* ==========================================
+   ACHIEVEMENTS PAGE STYLES
+   ========================================== */
+
+/* Page Background & Base Font */
+body.achievements-page {
+    background-color: #0b1120;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Container Clearance for Fixed Header */
+.achievements-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 140px 20px 60px; /* 140px ensures title clears header */
+}
+
+/* Page Title Accent Bar */
+.achievements-container .page-title h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.achievements-container .page-title .underline {
+    width: 50px;
+    height: 4px;
+    background-color: #0088ff;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #0088ff;
+    margin-bottom: 40px;
+}
+
+/* ==========================================
+   TIMELINE STRUCTURE
+   ========================================== */
+
+.achievements-timeline {
+    position: relative;
+    padding-left: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Glowing Connecting Line */
+.achievements-timeline::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 6px;
+    width: 2px;
+    background: #0088ff;
+    box-shadow: 0 0 6px rgba(0, 136, 255, 0.6);
+}
+
+/* ==========================================
+   ACHIEVEMENT CARDS
+   ========================================== */
+
+.achievement-card {
+    position: relative;
+    background: rgba(18, 28, 48, 0.6);
+    border: 1px solid rgba(0, 136, 255, 0.15);
+    border-radius: 12px;
+    padding: 22px 28px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 210, 255, 0.15);
+}
+
+/* Glowing Timeline Node Dot */
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 26px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #00d2ff;
+    box-shadow: 0 0 10px #00d2ff, 0 0 18px #00d2ff;
+    z-index: 2;
+}
+
+/* Category Badge (Top Tag) */
+.achievement-card .card-tag {
+    display: inline-block;
+    background-color: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+/* Headings & Descriptions */
+.achievement-card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.achievement-card h3 {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 400;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.achievement-card h3 span {
+    color: #00d2ff;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.achievement-card p {
+    font-size: 0.95rem;
+    color: #cbd5e0;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+/* Skill Badges/Pills inside Achievement Cards */
+.achievement-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.achievement-skills span {
+    background: rgba(255, 255, 255, 0.04);
+    color: #00d2ff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+
+/* ==========================================
+   CONTACT FORM & CARD STYLES
+   ========================================== */
+
+/* Outer Right Card Wrapper */
+.contact-form-card {
+    background: rgba(18, 28, 48, 0.6);
+    border: 1px solid rgba(0, 136, 255, 0.15);
+    border-radius: 12px;
+    padding: 140px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Container Layout */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Individual Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Label Styling */
+.form-group label {
+    padding-top: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* Input Fields & Textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: #0b1120;
+    color: #ffffff;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    padding-top:50px;
+    color: #94a3b8;
+    opacity: 1;
+}
+
+/* Focus State with Neon Blue Glow */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #0088ff;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 136, 255, 0.3);
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #00d2ff;
+    color: #0b1120;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+    transform: translateY(-2px);
+}
